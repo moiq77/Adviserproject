@@ -3,6 +3,11 @@
  * Additional styles not covered by Tailwind CSS
  */
 
+/* Smooth scrolling for a modern feel */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Apply Cairo font to the entire site */
 body {
     font-family: 'Cairo', sans-serif;
