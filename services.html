@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/navigation.min.js" defer></script>
     <script src="js/livechat.min.js" defer></script>
+    <script src="js/content.js"></script>
     <link rel="stylesheet" href="css/custom.min.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +45,6 @@
                 <a href="about.html" class="font-semibold hover:text-primary transition-colors">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:text-primary transition-colors">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:text-primary transition-colors">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:text-primary transition-colors">لوحة التحكم</a>
             </nav>
             
             <button id="mobile-menu-button" class="md:hidden flex items-center text-gray-700 focus:outline-none" aria-label="Toggle Mobile Menu">
@@ -66,7 +66,6 @@
                 <a href="about.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">لوحة التحكم</a>
             </div>
         </div>
     </header>
@@ -93,15 +92,15 @@
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-2xl font-semibold mb-3 text-primary">استشارة اختيار التخصص</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow leading-relaxed">نقدم لك تحليلاً شاملاً لميولك الأكاديمية وقدراتك الشخصية، ونساعدك على استكشاف التخصصات الجامعية التي تتوافق مع شغفك وتطلعاتك المهنية. نستخدم أدوات تقييم معتمدة ونقدم لك رؤى قيمة حول سوق العمل ومتطلباته.</p>
-                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-6">
+                        <h3 id="service-major-title" class="text-2xl font-semibold mb-3 text-primary">استشارة اختيار التخصص</h3>
+        <p id="service-major-long" class="text-gray-600 mb-4 text-sm flex-grow leading-relaxed">نقدم لك تحليلاً شاملاً لميولك الأكاديمية وقدراتك الشخصية، ونساعدك على استكشاف التخصصات الجامعية التي تتوافق مع شغفك وتطلعاتك المهنية. نستخدم أدوات تقييم معتمدة ونقدم لك رؤى قيمة حول سوق العمل ومتطلباته.</p>
+        <ul id="service-major-bullets" class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-6">
                             <li>تحليل الميول والقدرات</li>
                             <li>استكشاف الخيارات المتاحة</li>
                             <li>مواءمة مع سوق العمل</li>
                             <li>دعم اتخاذ القرار</li>
                         </ul>
-                        <span class="block text-gray-800 font-bold text-lg mb-4">مدة الجلسة: 60 دقيقة | السعر: 250 ريال</span>
+                        <span id="service-major-session" class="block text-gray-800 font-bold text-lg mb-4">مدة الجلسة: 60 دقيقة | السعر: 250 ريال</span>
                         <a href="book-session.html?service=major-selection" class="mt-auto w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300">احجز الآن</a>
                     </div>
                 </div>
@@ -116,21 +115,19 @@
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-2xl font-semibold mb-3 text-primary">استشارة اختيار الجامعة</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow leading-relaxed">مساعدتك في تحديد الجامعة المثالية تبدأ من فهم متطلباتك الأكاديمية، معدلك، والتخصص المرغوب. نوجهك عبر معايير مثل السمعة الأكاديمية، البرامج المتاحة، الموقع، وتكاليف الدراسة، لضمان اختيار يناسبك تمامًا.</p>
-                        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-6">
+                        <h3 id="service-university-title" class="text-2xl font-semibold mb-3 text-primary">استشارة اختيار الجامعة</h3>
+                        <p id="service-university-long" class="text-gray-600 mb-4 text-sm flex-grow leading-relaxed">مساعدتك في تحديد الجامعة المثالية تبدأ من فهم متطلباتك الأكاديمية، معدلك، والتخصص المرغوب. نوجهك عبر معايير مثل السمعة الأكاديمية، البرامج المتاحة، الموقع، وتكاليف الدراسة، لضمان اختيار يناسبك تمامًا.</p>
+                        <ul id="service-university-bullets" class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-6">
                             <li>تقييم معايير القبول</li>
                             <li>مقارنة بين الجامعات</li>
                             <li>نصائح للتقديم الجامعي</li>
                             <li>دعم اختيار السكن (عند الحاجة)</li>
                         </ul>
-                        <span class="block text-gray-800 font-bold text-lg mb-4">مدة الجلسة: 90 دقيقة | السعر: 350 ريال</span>
+                        <span id="service-university-session" class="block text-gray-800 font-bold text-lg mb-4">مدة الجلسة: 90 دقيقة | السعر: 350 ريال</span>
                         <a href="book-session.html?service=university-selection" class="mt-auto w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300">احجز الآن</a>
                     </div>
                 </div>
 
-                <!-- Service Card 3: Study Skills Development -->
-                <div id="service-study-skills" class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col overflow-hidden">
                     <div class="h-56 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1170&auto=format&fit=crop')">
                         <div class="bg-black bg-opacity-40 h-full flex items-center justify-center p-6">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-white opacity-90">
@@ -139,15 +136,8 @@
                         </div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col">
-                        <h3 class="text-2xl font-semibold mb-3 text-primary">تطوير المهارات الدراسية</h3>
-                        <p class="text-gray-600 mb-4 text-sm flex-grow leading-relaxed">نقدم جلسات تدريبية مخصصة لتزويدك بأدوات وتقنيات الدراسة الفعالة، إدارة الوقت، التحضير للامتحانات، وكتابة الأبحاث. هدفنا هو تمكينك من تحقيق أقصى استفادة من تجربتك الجامعية وتحسين أدائك الأكاديمي بشكل ملحوظ.</p>
-                         <ul class="list-disc list-inside text-gray-600 text-sm space-y-1 mb-6">
-                            <li>تقنيات المذاكرة الفعالة</li>
-                            <li>إدارة الوقت وتنظيم المهام</li>
-                            <li>استراتيجيات التحضير للاختبارات</li>
-                            <li>مهارات البحث والكتابة الأكاديمية</li>
-                        </ul>
-                        <span class="block text-gray-800 font-bold text-lg mb-4">مدة الجلسة: 60 دقيقة | السعر: 200 ريال</span>
+                <!-- Service Card 3: Study Skills Development -->
+                <div id="service-study-skills" class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col overflow-hidden">
                         <a href="book-session.html?service=study-skills" class="mt-auto w-full text-center bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300">احجز الآن</a>
                     </div>
                 </div>
@@ -181,7 +171,6 @@
                         <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">عنّا</a></li>
                         <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
                         <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
-                        <li><a href="admin.html" class="text-gray-400 hover:text-white transition-colors">لوحة التحكم</a></li>
                     </ul>
                 </div>
                 <div>
@@ -281,6 +270,20 @@
             </form>
         </div>
     </div>
+    <script>
+const s = window.siteContent.services;
+function fillService(prefix, data){
+  document.getElementById(`${prefix}-title`).innerText = data.title;
+  document.getElementById(`${prefix}-long`).innerText = data.long;
+  const ul = document.getElementById(`${prefix}-bullets`);
+  ul.innerHTML = '';
+  data.bullets.forEach(b=>{const li=document.createElement('li');li.innerText=b;ul.appendChild(li);});
+  document.getElementById(`${prefix}-session`).innerText = data.session;
+}
+fillService('service-major', s[0]);
+fillService('service-university', s[1]);
+fillService('service-study', s[2]);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
 </body>
 </html>

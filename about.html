@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/navigation.min.js" defer></script>
     <script src="js/livechat.min.js" defer></script>
+    <script src="js/content.js"></script>
     <link rel="stylesheet" href="css/custom.min.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +45,6 @@
                 <a href="about.html" class="font-semibold text-primary hover:text-secondary transition-colors">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:text-primary transition-colors">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:text-primary transition-colors">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:text-primary transition-colors">لوحة التحكم</a>
             </nav>
             
             <button id="mobile-menu-button" class="md:hidden flex items-center text-gray-700 focus:outline-none" aria-label="Toggle Mobile Menu">
@@ -66,7 +66,6 @@
                 <a href="about.html" class="font-semibold text-primary hover:bg-gray-100 p-2 rounded">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">لوحة التحكم</a>
             </div>
         </div>
     </header>
@@ -75,7 +74,7 @@
     <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">تعرّف على Advisor</h1>
-            <p class="text-lg max-w-2xl mx-auto">نحن هنا لمساعدتك في رسم ملامح مستقبلك الأكاديمي والمهني بثقة واقتدار.</p>
+            <p id="about-hero-text" class="text-lg max-w-2xl mx-auto">نحن هنا لمساعدتك في رسم ملامح مستقبلك الأكاديمي والمهني بثقة واقتدار.</p>
         </div>
     </section>
     
@@ -88,34 +87,37 @@
                 <!-- Team Member 1 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                     <div class="pt-8 px-6">
-                         <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار أحمد خالد">
+                         <img id="consultant1-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار أحمد خالد">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">أحمد خالد</h3>
-                        <p class="text-primary font-medium mb-3">مستشار تخصصات هندسية</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">خبرة 5 سنوات في توجيه الطلاب لاختيار التخصصات الهندسية والعلمية المناسبة لميولهم وقدراتهم.</p>
+                        <h3 id="consultant1-name" class="text-2xl font-semibold mb-2 text-gray-800">أحمد خالد</h3>
+                        <p id="consultant1-title" class="text-primary font-medium mb-3">مستشار تخصصات هندسية</p>
+                        <p id="consultant1-desc" class="text-gray-600 text-sm leading-relaxed">خبرة 5 سنوات في توجيه الطلاب لاختيار التخصصات الهندسية والعلمية المناسبة لميولهم وقدراتهم.</p>
+                        <a id="consultant1-cv" href="#" class="text-blue-600 underline mt-2 inline-block">السيرة الذاتية</a>
                     </div>
                 </div>
                 <!-- Team Member 2 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                     <div class="pt-8 px-6">
-                        <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشارة سارة المالكي">
+                        <img id="consultant2-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشارة سارة المالكي">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">سارة المالكي</h3>
-                        <p class="text-primary font-medium mb-3">مستشارة تخصصات أدبية وإنسانية</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">خبيرة في توجيه الطلاب لاختيار التخصصات المناسبة في المجالات الأدبية والإنسانية، ومساعدتهم على اكتشاف شغفهم.</p>
+                        <h3 id="consultant2-name" class="text-2xl font-semibold mb-2 text-gray-800">سارة المالكي</h3>
+                        <p id="consultant2-title" class="text-primary font-medium mb-3">مستشارة تخصصات أدبية وإنسانية</p>
+                        <p id="consultant2-desc" class="text-gray-600 text-sm leading-relaxed">خبيرة في توجيه الطلاب لاختيار التخصصات المناسبة في المجالات الأدبية والإنسانية، ومساعدتهم على اكتشاف شغفهم.</p>
+                        <a id="consultant2-cv" href="#" class="text-blue-600 underline mt-2 inline-block">السيرة الذاتية</a>
                     </div>
                 </div>
                 <!-- Team Member 3 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                      <div class="pt-8 px-6">
-                        <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار محمد الجابري">
+                        <img id="consultant3-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار محمد الجابري">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">محمد الجابري</h3>
-                        <p class="text-primary font-medium mb-3">مستشار تطوير مهارات</p>
-                        <p class="text-gray-600 text-sm leading-relaxed">متخصص في تطوير المهارات الدراسية وتقنيات التعلم الفعال، مع خبرة في مساعدة الطلاب على تحسين أدائهم الأكاديمي.</p>
+                        <h3 id="consultant3-name" class="text-2xl font-semibold mb-2 text-gray-800">محمد الجابري</h3>
+                        <p id="consultant3-title" class="text-primary font-medium mb-3">مستشار تطوير مهارات</p>
+                        <p id="consultant3-desc" class="text-gray-600 text-sm leading-relaxed">متخصص في تطوير المهارات الدراسية وتقنيات التعلم الفعال، مع خبرة في مساعدة الطلاب على تحسين أدائهم الأكاديمي.</p>
+                        <a id="consultant3-cv" href="#" class="text-blue-600 underline mt-2 inline-block">السيرة الذاتية</a>
                     </div>
                 </div>
             </div>
@@ -182,7 +184,6 @@
                         <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">عنّا</a></li>
                         <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
                         <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
-                        <li><a href="admin.html" class="text-gray-400 hover:text-white transition-colors">لوحة التحكم</a></li>
                     </ul>
                 </div>
                 <div>
@@ -305,6 +306,25 @@
             </form>
         </div>
     </div>
+    <script>
+const c = window.siteContent;
+document.getElementById("about-hero-text").innerText = c.aboutHeroText;
+function setConsultant(i){
+  const d = c.consultants[i];
+  const idx = i+1;
+  document.getElementById(`consultant${idx}-name`).innerText = d.name;
+  document.getElementById(`consultant${idx}-title`).innerText = d.title;
+  document.getElementById(`consultant${idx}-desc`).innerText = d.description;
+  document.getElementById(`consultant${idx}-cv`).href = d.cv;
+  const img = document.getElementById(`consultant${idx}-photo`);
+  img.setAttribute("data-src", d.photo);
+  img.src = d.photo;
+  img.alt = d.name;
+}
+setConsultant(0);
+setConsultant(1);
+setConsultant(2);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
 </body>
 </html>

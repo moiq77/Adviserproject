@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/custom.min.css">
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#fd5c45',
+                        'secondary': '#ffab52',
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="../js/content.js"></script>
+</head>
+<body class="font-cairo bg-gray-50 text-gray-900">
+    <!-- Login Section -->
+    <section id="login-section" class="min-h-screen flex items-center justify-center">
+        <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+            <h1 class="text-2xl font-bold mb-6 text-center">تسجيل دخول الإدارة</h1>
+            <form id="login-form" class="space-y-4">
+                <input type="password" id="admin-password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" placeholder="كلمة المرور" required>
+                <button type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-secondary transition-colors">دخول</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="hidden container mx-auto py-10">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">لوحة التحكم</h1>
+            <button id="logout-button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors">خروج</button>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6">
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">الصفحة الرئيسية</h2>
+                <div>
+                    <label for="hero-title-input" class="block mb-1">عنوان الواجهة</label>
+                    <input id="hero-title-input" type="text" class="w-full border p-2 rounded">
+                    <label for="hero-subtitle-input" class="block mt-2 mb-1">وصف الواجهة</label>
+                    <textarea id="hero-subtitle-input" class="w-full border p-2 rounded"></textarea>
+                </div>
+            </div>
+
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">الخدمات</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold mb-2">الخدمة 1</h3>
+                        <label for="service1-title-input" class="block mb-1">عنوان الخدمة</label>
+                        <input id="service1-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="service1-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service1-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service1-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service1-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service1-session-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">الخدمة 2</h3>
+                        <label for="service2-title-input" class="block mb-1">عنوان الخدمة</label>
+                        <input id="service2-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="service2-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service2-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service2-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service2-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service2-session-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">الخدمة 3</h3>
+                        <label for="service3-title-input" class="block mb-1">عنوان الخدمة</label>
+                        <input id="service3-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="service3-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service3-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service3-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service3-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service3-session-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">صفحة عنّا والمستشارون</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label for="about-hero-text-input" class="block mb-1">نص صفحة عنّا</label>
+                        <textarea id="about-hero-text-input" class="w-full border p-2 rounded"></textarea>
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">المستشار 1</h3>
+                        <label for="consultant1-name-input" class="block mb-1">اسم المستشار 1</label>
+                        <input id="consultant1-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-title-input" class="block mt-2 mb-1">تخصص المستشار 1</label>
+                        <input id="consultant1-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-desc-input" class="block mt-2 mb-1">وصف المستشار 1</label>
+                        <textarea id="consultant1-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant1-photo-input" class="block mt-2 mb-1">رابط صورة المستشار 1</label>
+                        <input id="consultant1-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية 1</label>
+                        <input id="consultant1-cv-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">المستشار 2</h3>
+                        <label for="consultant2-name-input" class="block mb-1">اسم المستشار 2</label>
+                        <input id="consultant2-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-title-input" class="block mt-2 mb-1">تخصص المستشار 2</label>
+                        <input id="consultant2-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-desc-input" class="block mt-2 mb-1">وصف المستشار 2</label>
+                        <textarea id="consultant2-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant2-photo-input" class="block mt-2 mb-1">رابط صورة المستشار 2</label>
+                        <input id="consultant2-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية 2</label>
+                        <input id="consultant2-cv-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">المستشار 3</h3>
+                        <label for="consultant3-name-input" class="block mb-1">اسم المستشار 3</label>
+                        <input id="consultant3-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-title-input" class="block mt-2 mb-1">تخصص المستشار 3</label>
+                        <input id="consultant3-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-desc-input" class="block mt-2 mb-1">وصف المستشار 3</label>
+                        <textarea id="consultant3-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant3-photo-input" class="block mt-2 mb-1">رابط صورة المستشار 3</label>
+                        <input id="consultant3-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية 3</label>
+                        <input id="consultant3-cv-input" type="text" class="w-full border p-2 rounded">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button id="save-content" class="bg-primary text-white px-6 py-2 rounded hover:bg-secondary transition-colors">حفظ</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const PASSWORD = 'admin123';
+        const loginForm = document.getElementById('login-form');
+        const loginSection = document.getElementById('login-section');
+        const dashboard = document.getElementById('dashboard');
+        const logoutButton = document.getElementById('logout-button');
+
+        function populateForm() {
+            const c = window.siteContent;
+            document.getElementById('hero-title-input').value = c.heroTitle;
+            document.getElementById('hero-subtitle-input').value = c.heroSubtitle;
+            document.getElementById('service1-title-input').value = c.services[0].title;
+            document.getElementById('service1-short-input').value = c.services[0].short;
+            document.getElementById('service1-long-input').value = c.services[0].long;
+            document.getElementById('service1-bullets-input').value = c.services[0].bullets.join('\n');
+            document.getElementById('service1-session-input').value = c.services[0].session;
+            document.getElementById('service2-title-input').value = c.services[1].title;
+            document.getElementById('service2-short-input').value = c.services[1].short;
+            document.getElementById('service2-long-input').value = c.services[1].long;
+            document.getElementById('service2-bullets-input').value = c.services[1].bullets.join('\n');
+            document.getElementById('service2-session-input').value = c.services[1].session;
+            document.getElementById('service3-title-input').value = c.services[2].title;
+            document.getElementById('service3-short-input').value = c.services[2].short;
+            document.getElementById('service3-long-input').value = c.services[2].long;
+            document.getElementById('service3-bullets-input').value = c.services[2].bullets.join('\n');
+            document.getElementById('service3-session-input').value = c.services[2].session;
+            document.getElementById('about-hero-text-input').value = c.aboutHeroText;
+            document.getElementById('consultant1-name-input').value = c.consultants[0].name;
+            document.getElementById('consultant1-title-input').value = c.consultants[0].title;
+            document.getElementById('consultant1-desc-input').value = c.consultants[0].description;
+            document.getElementById('consultant1-photo-input').value = c.consultants[0].photo;
+            document.getElementById('consultant1-cv-input').value = c.consultants[0].cv;
+            document.getElementById('consultant2-name-input').value = c.consultants[1].name;
+            document.getElementById('consultant2-title-input').value = c.consultants[1].title;
+            document.getElementById('consultant2-desc-input').value = c.consultants[1].description;
+            document.getElementById('consultant2-photo-input').value = c.consultants[1].photo;
+            document.getElementById('consultant2-cv-input').value = c.consultants[1].cv;
+            document.getElementById('consultant3-name-input').value = c.consultants[2].name;
+            document.getElementById('consultant3-title-input').value = c.consultants[2].title;
+            document.getElementById('consultant3-desc-input').value = c.consultants[2].description;
+            document.getElementById('consultant3-photo-input').value = c.consultants[2].photo;
+            document.getElementById('consultant3-cv-input').value = c.consultants[2].cv;
+        }
+
+        function showDashboard() {
+            loginSection.classList.add('hidden');
+            dashboard.classList.remove('hidden');
+            populateForm();
+        }
+
+        function logout() {
+            localStorage.removeItem('isAdmin');
+            dashboard.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        }
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pw = document.getElementById('admin-password').value;
+            if (pw === PASSWORD) {
+                localStorage.setItem('isAdmin', 'true');
+                showDashboard();
+            } else {
+                alert('كلمة المرور غير صحيحة');
+            }
+        });
+
+        logoutButton.addEventListener('click', logout);
+
+        document.getElementById('save-content').addEventListener('click', function() {
+            const c = window.siteContent;
+            c.heroTitle = document.getElementById('hero-title-input').value;
+            c.heroSubtitle = document.getElementById('hero-subtitle-input').value;
+            c.services[0].title = document.getElementById('service1-title-input').value;
+            c.services[0].short = document.getElementById('service1-short-input').value;
+            c.services[0].long = document.getElementById('service1-long-input').value;
+            c.services[0].bullets = document.getElementById('service1-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[0].session = document.getElementById('service1-session-input').value;
+            c.services[1].title = document.getElementById('service2-title-input').value;
+            c.services[1].short = document.getElementById('service2-short-input').value;
+            c.services[1].long = document.getElementById('service2-long-input').value;
+            c.services[1].bullets = document.getElementById('service2-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[1].session = document.getElementById('service2-session-input').value;
+            c.services[2].title = document.getElementById('service3-title-input').value;
+            c.services[2].short = document.getElementById('service3-short-input').value;
+            c.services[2].long = document.getElementById('service3-long-input').value;
+            c.services[2].bullets = document.getElementById('service3-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[2].session = document.getElementById('service3-session-input').value;
+            c.aboutHeroText = document.getElementById('about-hero-text-input').value;
+            c.consultants[0].name = document.getElementById('consultant1-name-input').value;
+            c.consultants[0].title = document.getElementById('consultant1-title-input').value;
+            c.consultants[0].description = document.getElementById('consultant1-desc-input').value;
+            c.consultants[0].photo = document.getElementById('consultant1-photo-input').value;
+            c.consultants[0].cv = document.getElementById('consultant1-cv-input').value;
+            c.consultants[1].name = document.getElementById('consultant2-name-input').value;
+            c.consultants[1].title = document.getElementById('consultant2-title-input').value;
+            c.consultants[1].description = document.getElementById('consultant2-desc-input').value;
+            c.consultants[1].photo = document.getElementById('consultant2-photo-input').value;
+            c.consultants[1].cv = document.getElementById('consultant2-cv-input').value;
+            c.consultants[2].name = document.getElementById('consultant3-name-input').value;
+            c.consultants[2].title = document.getElementById('consultant3-title-input').value;
+            c.consultants[2].description = document.getElementById('consultant3-desc-input').value;
+            c.consultants[2].photo = document.getElementById('consultant3-photo-input').value;
+            c.consultants[2].cv = document.getElementById('consultant3-cv-input').value;
+            window.saveSiteContent();
+            alert('تم حفظ المحتوى');
+        });
+
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('isAdmin') === 'true') {
+                showDashboard();
+            }
+        });
+    </script>
+</body>
+</html>
