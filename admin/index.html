@@ -78,17 +78,44 @@
                         <label for="about-hero-text-input" class="block mb-1">نص صفحة عنّا</label>
                         <textarea id="about-hero-text-input" class="w-full border p-2 rounded"></textarea>
                     </div>
-                    <div>
-                        <label for="consultant1-photo-input" class="block mb-1">رابط صورة المستشار 1</label>
+                    <div class="border rounded p-4 space-y-2">
+                        <h3 class="font-semibold mb-2">المستشار 1</h3>
+                        <label for="consultant1-name-input" class="block mb-1">الاسم</label>
+                        <input id="consultant1-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-title-input" class="block mt-2 mb-1">المسمى الوظيفي</label>
+                        <input id="consultant1-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-desc-input" class="block mt-2 mb-1">الوصف</label>
+                        <textarea id="consultant1-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant1-photo-input" class="block mt-2 mb-1">رابط الصورة</label>
                         <input id="consultant1-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant1-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية</label>
+                        <input id="consultant1-cv-input" type="text" class="w-full border p-2 rounded">
                     </div>
-                    <div>
-                        <label for="consultant2-photo-input" class="block mb-1">رابط صورة المستشار 2</label>
+                    <div class="border rounded p-4 space-y-2">
+                        <h3 class="font-semibold mb-2">المستشار 2</h3>
+                        <label for="consultant2-name-input" class="block mb-1">الاسم</label>
+                        <input id="consultant2-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-title-input" class="block mt-2 mb-1">المسمى الوظيفي</label>
+                        <input id="consultant2-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-desc-input" class="block mt-2 mb-1">الوصف</label>
+                        <textarea id="consultant2-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant2-photo-input" class="block mt-2 mb-1">رابط الصورة</label>
                         <input id="consultant2-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant2-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية</label>
+                        <input id="consultant2-cv-input" type="text" class="w-full border p-2 rounded">
                     </div>
-                    <div>
-                        <label for="consultant3-photo-input" class="block mb-1">رابط صورة المستشار 3</label>
+                    <div class="border rounded p-4 space-y-2">
+                        <h3 class="font-semibold mb-2">المستشار 3</h3>
+                        <label for="consultant3-name-input" class="block mb-1">الاسم</label>
+                        <input id="consultant3-name-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-title-input" class="block mt-2 mb-1">المسمى الوظيفي</label>
+                        <input id="consultant3-title-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-desc-input" class="block mt-2 mb-1">الوصف</label>
+                        <textarea id="consultant3-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="consultant3-photo-input" class="block mt-2 mb-1">رابط الصورة</label>
                         <input id="consultant3-photo-input" type="text" class="w-full border p-2 rounded">
+                        <label for="consultant3-cv-input" class="block mt-2 mb-1">رابط السيرة الذاتية</label>
+                        <input id="consultant3-cv-input" type="text" class="w-full border p-2 rounded">
                     </div>
                 </div>
             </div>
@@ -115,9 +142,21 @@
             document.getElementById('service3-title-input').value = c.featuredServices[2].title;
             document.getElementById('service3-desc-input').value = c.featuredServices[2].description;
             document.getElementById('about-hero-text-input').value = c.aboutHeroText;
+            document.getElementById('consultant1-name-input').value = c.consultants[0].name;
+            document.getElementById('consultant1-title-input').value = c.consultants[0].title;
+            document.getElementById('consultant1-desc-input').value = c.consultants[0].description;
             document.getElementById('consultant1-photo-input').value = c.consultants[0].photo;
+            document.getElementById('consultant1-cv-input').value = c.consultants[0].cv;
+            document.getElementById('consultant2-name-input').value = c.consultants[1].name;
+            document.getElementById('consultant2-title-input').value = c.consultants[1].title;
+            document.getElementById('consultant2-desc-input').value = c.consultants[1].description;
             document.getElementById('consultant2-photo-input').value = c.consultants[1].photo;
+            document.getElementById('consultant2-cv-input').value = c.consultants[1].cv;
+            document.getElementById('consultant3-name-input').value = c.consultants[2].name;
+            document.getElementById('consultant3-title-input').value = c.consultants[2].title;
+            document.getElementById('consultant3-desc-input').value = c.consultants[2].description;
             document.getElementById('consultant3-photo-input').value = c.consultants[2].photo;
+            document.getElementById('consultant3-cv-input').value = c.consultants[2].cv;
         }
 
         function showDashboard() {
@@ -154,9 +193,21 @@
             c.featuredServices[2].title = document.getElementById('service3-title-input').value;
             c.featuredServices[2].description = document.getElementById('service3-desc-input').value;
             c.aboutHeroText = document.getElementById('about-hero-text-input').value;
+            c.consultants[0].name = document.getElementById('consultant1-name-input').value;
+            c.consultants[0].title = document.getElementById('consultant1-title-input').value;
+            c.consultants[0].description = document.getElementById('consultant1-desc-input').value;
             c.consultants[0].photo = document.getElementById('consultant1-photo-input').value;
+            c.consultants[0].cv = document.getElementById('consultant1-cv-input').value;
+            c.consultants[1].name = document.getElementById('consultant2-name-input').value;
+            c.consultants[1].title = document.getElementById('consultant2-title-input').value;
+            c.consultants[1].description = document.getElementById('consultant2-desc-input').value;
             c.consultants[1].photo = document.getElementById('consultant2-photo-input').value;
+            c.consultants[1].cv = document.getElementById('consultant2-cv-input').value;
+            c.consultants[2].name = document.getElementById('consultant3-name-input').value;
+            c.consultants[2].title = document.getElementById('consultant3-title-input').value;
+            c.consultants[2].description = document.getElementById('consultant3-desc-input').value;
             c.consultants[2].photo = document.getElementById('consultant3-photo-input').value;
+            c.consultants[2].cv = document.getElementById('consultant3-cv-input').value;
             window.saveSiteContent();
             alert('تم حفظ المحتوى');
         });
