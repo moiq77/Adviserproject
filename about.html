@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/navigation.min.js" defer></script>
     <script src="js/livechat.min.js" defer></script>
+    <script src="js/content.js"></script>
     <link rel="stylesheet" href="css/custom.min.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +45,6 @@
                 <a href="about.html" class="font-semibold text-primary hover:text-secondary transition-colors">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:text-primary transition-colors">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:text-primary transition-colors">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:text-primary transition-colors">لوحة التحكم</a>
             </nav>
             
             <button id="mobile-menu-button" class="md:hidden flex items-center text-gray-700 focus:outline-none" aria-label="Toggle Mobile Menu">
@@ -66,7 +66,6 @@
                 <a href="about.html" class="font-semibold text-primary hover:bg-gray-100 p-2 rounded">عنّا</a>
                 <a href="contact.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">اتصل بنا</a>
                 <a href="blog.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">المدونة</a>
-                <a href="admin.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">لوحة التحكم</a>
             </div>
         </div>
     </header>
@@ -75,7 +74,7 @@
     <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">تعرّف على Advisor</h1>
-            <p class="text-lg max-w-2xl mx-auto">نحن هنا لمساعدتك في رسم ملامح مستقبلك الأكاديمي والمهني بثقة واقتدار.</p>
+            <p id="about-hero-text" class="text-lg max-w-2xl mx-auto">نحن هنا لمساعدتك في رسم ملامح مستقبلك الأكاديمي والمهني بثقة واقتدار.</p>
         </div>
     </section>
     
@@ -88,7 +87,7 @@
                 <!-- Team Member 1 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                     <div class="pt-8 px-6">
-                         <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار أحمد خالد">
+                         <img id="consultant1-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار أحمد خالد">
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-gray-800">أحمد خالد</h3>
@@ -99,7 +98,7 @@
                 <!-- Team Member 2 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                     <div class="pt-8 px-6">
-                        <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشارة سارة المالكي">
+                        <img id="consultant2-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشارة سارة المالكي">
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-gray-800">سارة المالكي</h3>
@@ -110,7 +109,7 @@
                 <!-- Team Member 3 -->
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
                      <div class="pt-8 px-6">
-                        <img class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار محمد الجابري">
+                        <img id="consultant3-photo" class="lazyload w-32 h-32 rounded-full mx-auto object-cover border-4 border-secondary shadow-md" data-src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=200&q=80" alt="المستشار محمد الجابري">
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-semibold mb-2 text-gray-800">محمد الجابري</h3>
@@ -182,7 +181,6 @@
                         <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">عنّا</a></li>
                         <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
                         <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
-                        <li><a href="admin.html" class="text-gray-400 hover:text-white transition-colors">لوحة التحكم</a></li>
                     </ul>
                 </div>
                 <div>
@@ -305,6 +303,14 @@
             </form>
         </div>
     </div>
+    <script>
+const c = window.siteContent;
+document.getElementById("about-hero-text").innerText = c.aboutHeroText;
+function upd(id, url){var el=document.getElementById(id); el.setAttribute("data-src", url); el.src=url;}
+upd("consultant1-photo", c.consultants[0].photo);
+upd("consultant2-photo", c.consultants[1].photo);
+upd("consultant3-photo", c.consultants[2].photo);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
 </body>
 </html>
