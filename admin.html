@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Advisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/custom.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#fd5c45',
+                        'secondary': '#ffab52',
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-cairo bg-gray-50 text-gray-900">
+    <!-- Login Section -->
+    <section id="login-section" class="min-h-screen flex items-center justify-center">
+        <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+            <h1 class="text-2xl font-bold mb-6 text-center">تسجيل دخول الإدارة</h1>
+            <form id="login-form" class="space-y-4">
+                <input type="password" id="admin-password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary" placeholder="كلمة المرور" required>
+                <button type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-lg hover:bg-secondary transition-colors">دخول</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="hidden container mx-auto py-10">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">لوحة التحكم</h1>
+            <button id="logout-button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors">خروج</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">إدارة المحتوى</h2>
+                <p class="text-gray-600 mb-4">قم بتحديث النصوص والصور الأساسية للموقع.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition-colors">تحديث</button>
+            </div>
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">إدارة المدونة</h2>
+                <p class="text-gray-600 mb-4">أضف أو عدل مقالات المدونة بسهولة.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded hover:bg-secondary transition-colors">إضافة مقال</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const PASSWORD = 'admin123';
+        const loginForm = document.getElementById('login-form');
+        const loginSection = document.getElementById('login-section');
+        const dashboard = document.getElementById('dashboard');
+        const logoutButton = document.getElementById('logout-button');
+
+        function showDashboard() {
+            loginSection.classList.add('hidden');
+            dashboard.classList.remove('hidden');
+        }
+
+        function logout() {
+            localStorage.removeItem('isAdmin');
+            dashboard.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+        }
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pw = document.getElementById('admin-password').value;
+            if (pw === PASSWORD) {
+                localStorage.setItem('isAdmin', 'true');
+                showDashboard();
+            } else {
+                alert('كلمة المرور غير صحيحة');
+            }
+        });
+
+        logoutButton.addEventListener('click', logout);
+
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('isAdmin') === 'true') {
+                showDashboard();
+            }
+        });
+    </script>
+</body>
+</html>
