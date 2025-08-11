@@ -76,8 +76,8 @@
     <section class="relative bg-gradient-to-r from-primary to-secondary text-white py-20 md:py-28">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-1/2 text-center md:text-right">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">مرحباً بطلاب الجامعة! <br class="hidden md:block"> Advisor هو دليلك لاكتشاف مستقبلك الأكاديمي</h1>
-                <p class="text-lg md:text-xl mb-10">نقدم لك استشارات مخصصة لاختيار التخصص والجامعة التي تناسب طموحاتك وميولك. ابدأ رحلتك نحو النجاح معنا.</p>
+                <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">مرحباً بطلاب الجامعة! <br class="hidden md:block"> Advisor هو دليلك لاكتشاف مستقبلك الأكاديمي</h1>
+                <p id="hero-subtitle" class="text-lg md:text-xl mb-10">نقدم لك استشارات مخصصة لاختيار التخصص والجامعة التي تناسب طموحاتك وميولك. ابدأ رحلتك نحو النجاح معنا.</p>
                 <a href="book-session.html" class="inline-block bg-white text-primary font-bold py-3 px-8 md:py-4 md:px-10 rounded-lg shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-300 text-lg">احجز جلستك الآن</a>
             </div>
             <div class="md:w-1/2 mt-8 md:mt-0">
@@ -424,12 +424,14 @@
     </div>
     <script>
 const c = window.siteContent;
-document.getElementById("service1-title").innerText = c.featuredServices[0].title;
-document.getElementById("service1-desc").innerText = c.featuredServices[0].description;
-document.getElementById("service2-title").innerText = c.featuredServices[1].title;
-document.getElementById("service2-desc").innerText = c.featuredServices[1].description;
-document.getElementById("service3-title").innerText = c.featuredServices[2].title;
-document.getElementById("service3-desc").innerText = c.featuredServices[2].description;
+document.getElementById("hero-title").innerText = c.heroTitle;
+document.getElementById("hero-subtitle").innerText = c.heroSubtitle;
+document.getElementById("service1-title").innerText = c.services[0].title;
+document.getElementById("service1-desc").innerText = c.services[0].short;
+document.getElementById("service2-title").innerText = c.services[1].title;
+document.getElementById("service2-desc").innerText = c.services[1].short;
+document.getElementById("service3-title").innerText = c.services[2].title;
+document.getElementById("service3-desc").innerText = c.services[2].short;
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
 </body>

@@ -48,25 +48,56 @@
 
         <div class="grid grid-cols-1 gap-6">
             <div class="bg-white shadow rounded-lg p-6">
-                <h2 class="text-xl font-semibold mb-4">الخدمات المميزة</h2>
-                <div class="space-y-4">
+                <h2 class="text-xl font-semibold mb-4">الصفحة الرئيسية</h2>
+                <div>
+                    <label for="hero-title-input" class="block mb-1">عنوان الواجهة</label>
+                    <input id="hero-title-input" type="text" class="w-full border p-2 rounded">
+                    <label for="hero-subtitle-input" class="block mt-2 mb-1">وصف الواجهة</label>
+                    <textarea id="hero-subtitle-input" class="w-full border p-2 rounded"></textarea>
+                </div>
+            </div>
+
+            <div class="bg-white shadow rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">الخدمات</h2>
+                <div class="space-y-6">
                     <div>
-                        <label for="service1-title-input" class="block mb-1">عنوان الخدمة 1</label>
+                        <h3 class="font-semibold mb-2">الخدمة 1</h3>
+                        <label for="service1-title-input" class="block mb-1">عنوان الخدمة</label>
                         <input id="service1-title-input" type="text" class="w-full border p-2 rounded">
-                        <label for="service1-desc-input" class="block mt-2 mb-1">وصف الخدمة 1</label>
-                        <textarea id="service1-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service1-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service1-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service1-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service1-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service1-session-input" type="text" class="w-full border p-2 rounded">
                     </div>
-                    <div>
-                        <label for="service2-title-input" class="block mb-1">عنوان الخدمة 2</label>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">الخدمة 2</h3>
+                        <label for="service2-title-input" class="block mb-1">عنوان الخدمة</label>
                         <input id="service2-title-input" type="text" class="w-full border p-2 rounded">
-                        <label for="service2-desc-input" class="block mt-2 mb-1">وصف الخدمة 2</label>
-                        <textarea id="service2-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service2-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service2-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service2-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service2-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service2-session-input" type="text" class="w-full border p-2 rounded">
                     </div>
-                    <div>
-                        <label for="service3-title-input" class="block mb-1">عنوان الخدمة 3</label>
+                    <div class="border-t pt-4">
+                        <h3 class="font-semibold mb-2">الخدمة 3</h3>
+                        <label for="service3-title-input" class="block mb-1">عنوان الخدمة</label>
                         <input id="service3-title-input" type="text" class="w-full border p-2 rounded">
-                        <label for="service3-desc-input" class="block mt-2 mb-1">وصف الخدمة 3</label>
-                        <textarea id="service3-desc-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-short-input" class="block mt-2 mb-1">وصف مختصر</label>
+                        <textarea id="service3-short-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-long-input" class="block mt-2 mb-1">وصف تفصيلي</label>
+                        <textarea id="service3-long-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-bullets-input" class="block mt-2 mb-1">نقاط (سطر لكل نقطة)</label>
+                        <textarea id="service3-bullets-input" class="w-full border p-2 rounded"></textarea>
+                        <label for="service3-session-input" class="block mt-2 mb-1">معلومات الجلسة</label>
+                        <input id="service3-session-input" type="text" class="w-full border p-2 rounded">
                     </div>
                 </div>
             </div>
@@ -135,12 +166,23 @@
 
         function populateForm() {
             const c = window.siteContent;
-            document.getElementById('service1-title-input').value = c.featuredServices[0].title;
-            document.getElementById('service1-desc-input').value = c.featuredServices[0].description;
-            document.getElementById('service2-title-input').value = c.featuredServices[1].title;
-            document.getElementById('service2-desc-input').value = c.featuredServices[1].description;
-            document.getElementById('service3-title-input').value = c.featuredServices[2].title;
-            document.getElementById('service3-desc-input').value = c.featuredServices[2].description;
+            document.getElementById('hero-title-input').value = c.heroTitle;
+            document.getElementById('hero-subtitle-input').value = c.heroSubtitle;
+            document.getElementById('service1-title-input').value = c.services[0].title;
+            document.getElementById('service1-short-input').value = c.services[0].short;
+            document.getElementById('service1-long-input').value = c.services[0].long;
+            document.getElementById('service1-bullets-input').value = c.services[0].bullets.join('\n');
+            document.getElementById('service1-session-input').value = c.services[0].session;
+            document.getElementById('service2-title-input').value = c.services[1].title;
+            document.getElementById('service2-short-input').value = c.services[1].short;
+            document.getElementById('service2-long-input').value = c.services[1].long;
+            document.getElementById('service2-bullets-input').value = c.services[1].bullets.join('\n');
+            document.getElementById('service2-session-input').value = c.services[1].session;
+            document.getElementById('service3-title-input').value = c.services[2].title;
+            document.getElementById('service3-short-input').value = c.services[2].short;
+            document.getElementById('service3-long-input').value = c.services[2].long;
+            document.getElementById('service3-bullets-input').value = c.services[2].bullets.join('\n');
+            document.getElementById('service3-session-input').value = c.services[2].session;
             document.getElementById('about-hero-text-input').value = c.aboutHeroText;
             document.getElementById('consultant1-name-input').value = c.consultants[0].name;
             document.getElementById('consultant1-title-input').value = c.consultants[0].title;
@@ -186,12 +228,23 @@
 
         document.getElementById('save-content').addEventListener('click', function() {
             const c = window.siteContent;
-            c.featuredServices[0].title = document.getElementById('service1-title-input').value;
-            c.featuredServices[0].description = document.getElementById('service1-desc-input').value;
-            c.featuredServices[1].title = document.getElementById('service2-title-input').value;
-            c.featuredServices[1].description = document.getElementById('service2-desc-input').value;
-            c.featuredServices[2].title = document.getElementById('service3-title-input').value;
-            c.featuredServices[2].description = document.getElementById('service3-desc-input').value;
+            c.heroTitle = document.getElementById('hero-title-input').value;
+            c.heroSubtitle = document.getElementById('hero-subtitle-input').value;
+            c.services[0].title = document.getElementById('service1-title-input').value;
+            c.services[0].short = document.getElementById('service1-short-input').value;
+            c.services[0].long = document.getElementById('service1-long-input').value;
+            c.services[0].bullets = document.getElementById('service1-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[0].session = document.getElementById('service1-session-input').value;
+            c.services[1].title = document.getElementById('service2-title-input').value;
+            c.services[1].short = document.getElementById('service2-short-input').value;
+            c.services[1].long = document.getElementById('service2-long-input').value;
+            c.services[1].bullets = document.getElementById('service2-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[1].session = document.getElementById('service2-session-input').value;
+            c.services[2].title = document.getElementById('service3-title-input').value;
+            c.services[2].short = document.getElementById('service3-short-input').value;
+            c.services[2].long = document.getElementById('service3-long-input').value;
+            c.services[2].bullets = document.getElementById('service3-bullets-input').value.split(/\n+/).filter(Boolean);
+            c.services[2].session = document.getElementById('service3-session-input').value;
             c.aboutHeroText = document.getElementById('about-hero-text-input').value;
             c.consultants[0].name = document.getElementById('consultant1-name-input').value;
             c.consultants[0].title = document.getElementById('consultant1-title-input').value;
