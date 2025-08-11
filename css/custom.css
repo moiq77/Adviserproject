@@ -1,0 +1,162 @@
+/**
+ * Custom CSS for Advisor website
+ * Additional styles not covered by Tailwind CSS
+ */
+
+/* Apply Cairo font to the entire site */
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Custom gradient for primary buttons and backgrounds */
+.bg-gradient-primary {
+    background: linear-gradient(to right, #fd5c45, #ffab52);
+}
+
+/* Custom styles for article content in blog (single article view) */
+.article-prose h1,
+.article-prose h2,
+.article-prose h3,
+.article-prose h4,
+.article-prose h5,
+.article-prose h6 {
+    font-weight: bold;
+    margin-top: 1.5rem; /* Tailwind: mt-6 */
+    margin-bottom: 0.75rem; /* Tailwind: mb-3 */
+    color: #1f2937; /* Tailwind: text-gray-800 */
+}
+
+.article-prose h1 { /* This will style H1 tags within the markdown content */
+    font-size: 1.875rem; /* Tailwind: text-3xl */
+    line-height: 2.25rem; /* Tailwind: leading-9 */
+    border-bottom: 2px solid #e5e7eb; /* Tailwind: border-gray-200 */
+    padding-bottom: 0.5rem; /* Tailwind: pb-2 */
+    margin-bottom: 1.5rem; /* Tailwind: mb-6 */
+}
+
+.article-prose h2 {
+    font-size: 1.5rem; /* Tailwind: text-2xl */
+    line-height: 2rem; /* Tailwind: leading-8 */
+    border-bottom: 1px solid #f3f4f6; /* Tailwind: border-gray-100 */
+    padding-bottom: 0.25rem; /* Tailwind: pb-1 */
+    margin-top: 2rem; /* Tailwind: mt-8 */
+    margin-bottom: 1rem; /* Tailwind: mb-4 */
+}
+
+.article-prose h3 {
+    font-size: 1.25rem; /* Tailwind: text-xl */
+    line-height: 1.75rem; /* Tailwind: leading-7 */
+    margin-top: 1.75rem; /* Tailwind: mt-7 */
+    margin-bottom: 0.75rem; /* Tailwind: mb-3 */
+}
+
+.article-prose p {
+    margin-bottom: 1.25rem; /* Tailwind: mb-5 */
+    line-height: 1.75; /* Tailwind: leading-relaxed */
+    color: #374151; /* Tailwind: text-gray-700 */
+}
+
+.article-prose ul,
+.article-prose ol {
+    margin-bottom: 1.25rem; /* Tailwind: mb-5 */
+    padding-right: 1.75rem; /* Tailwind: pr-7, adjust based on list style position */
+    color: #374151; /* Tailwind: text-gray-700 */
+}
+
+.article-prose ul {
+    list-style-type: disc;
+}
+
+.article-prose ol {
+    list-style-type: decimal;
+}
+
+.article-prose li {
+    margin-bottom: 0.5rem; /* Tailwind: mb-2 */
+}
+
+.article-prose li > p { /* Paragraphs inside list items */
+    margin-bottom: 0.25rem; /* Tailwind: mb-1 */
+}
+
+
+.article-prose a {
+    color: #fd5c45; /* Tailwind: text-primary */
+    text-decoration: none;
+    font-weight: 600; /* Tailwind: font-semibold */
+}
+
+.article-prose a:hover {
+    text-decoration: underline;
+    color: #ffab52; /* Tailwind: text-secondary */
+}
+
+.article-prose blockquote {
+    border-right: 4px solid #fd5c45; /* Tailwind: border-primary */
+    padding: 0.75rem 1.25rem; /* Tailwind: p-3 pr-5 */
+    margin: 1.5rem 0; /* Tailwind: my-6 */
+    background-color: #f9fafb; /* Tailwind: bg-gray-50 */
+    color: #4b5563; /* Tailwind: text-gray-600 */
+    font-style: italic;
+    border-radius: 0 0.25rem 0.25rem 0; /* Tailwind: rounded-r-sm */
+}
+
+.article-prose img { /* Images within the markdown content */
+    max-width: 100%;
+    height: auto;
+    margin: 1.75rem auto; /* Tailwind: my-7 mx-auto */
+    border-radius: 0.5rem; /* Tailwind: rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Tailwind: shadow-md */
+    display: block;
+}
+
+.article-prose pre {
+    background-color: #1f2937; /* Tailwind: bg-gray-800 */
+    color: #d1d5db; /* Tailwind: text-gray-300 */
+    padding: 1rem; /* Tailwind: p-4 */
+    border-radius: 0.375rem; /* Tailwind: rounded-md */
+    overflow-x: auto;
+    margin-bottom: 1.5rem; /* Tailwind: mb-6 */
+}
+
+.article-prose code {
+    background-color: #e5e7eb; /* Tailwind: bg-gray-200 */
+    color: #1f2937; /* Tailwind: text-gray-800 */
+    padding: 0.125rem 0.25rem; /* Tailwind: px-1 py-0.5 */
+    border-radius: 0.25rem; /* Tailwind: rounded-sm */
+    font-size: 0.9em;
+}
+
+.article-prose pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+/* Line clamp for truncating text - Essential for blog list view */
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Additional helper for better readability in article body */
+.prose-lg { /* If using a "large" prose style, adjust base font size and line height */
+    font-size: 1.125rem; /* Tailwind: text-lg */
+    line-height: 1.75; /* Tailwind: leading-relaxed */
+}
+
+.prose-lg p, .prose-lg ul, .prose-lg ol {
+    font-size: 1.125rem; /* Tailwind: text-lg */
+}
+
+.prose-lg h1 { font-size: 2.25rem; } /* Tailwind: text-4xl */
+.prose-lg h2 { font-size: 1.875rem; } /* Tailwind: text-3xl */
+.prose-lg h3 { font-size: 1.5rem; } /* Tailwind: text-2xl */
+
+
+
+

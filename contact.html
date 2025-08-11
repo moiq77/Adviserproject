@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تواصل مع فريق Advisor للاستشارات التعليمية. املأ نموذج الاتصال أو اتصل بنا مباشرة للحصول على المساعدة والدعم.">
+    <title>اتصل بنا - Advisor للاستشارات التعليمية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/navigation.min.js" defer></script>
+    <script src="js/livechat.min.js" defer></script>
+    <link rel="stylesheet" href="css/custom.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#fd5c45',
+                        'secondary': '#ffab52',
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-cairo bg-gray-50 text-gray-900">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="https://r2.flowith.net/files/5f6b3b59-44f5-4972-93ff-8873ea07dadb/1747954604288-2@1500x1500.png" alt="Advisor Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="index.html" class="font-semibold hover:text-primary transition-colors">الرئيسية</a>
+                <a href="services.html" class="font-semibold hover:text-primary transition-colors">خدماتنا</a>
+                <a href="book-session.html" class="font-semibold hover:text-primary transition-colors">حجز جلسة</a>
+                <a href="about.html" class="font-semibold hover:text-primary transition-colors">عنّا</a>
+                <a href="contact.html" class="font-semibold text-primary hover:text-secondary transition-colors">اتصل بنا</a>
+                <a href="blog.html" class="font-semibold hover:text-primary transition-colors">المدونة</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden flex items-center text-gray-700 focus:outline-none" aria-label="Toggle Mobile Menu">
+                <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col gap-4">
+                <a href="index.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">الرئيسية</a>
+                <a href="services.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">خدماتنا</a>
+                <a href="book-session.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">حجز جلسة</a>
+                <a href="about.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">عنّا</a>
+                <a href="contact.html" class="font-semibold text-primary hover:bg-gray-100 p-2 rounded">اتصل بنا</a>
+                <a href="blog.html" class="font-semibold hover:bg-gray-100 p-2 rounded hover:text-primary">المدونة</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">تواصل معنا</h1>
+            <p class="text-lg max-w-2xl mx-auto">نحن هنا للإجابة على جميع استفساراتك ومساعدتك في رحلتك الأكاديمية.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form and Information Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-xl">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">أرسل لنا رسالة</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2 font-medium">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2 font-medium">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2 font-medium">الموضوع</label>
+                            <input type="text" id="subject" name="subject" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2 font-medium">رسالتك</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-8 rounded-lg shadow-md hover:opacity-90 hover:shadow-lg transition-all duration-300 text-lg">أرسل رسالتك</button>
+                        </div>
+                    </form>
+                    <div id="form-feedback" class="mt-4"></div>
+                </div>
+
+                <!-- Contact Information & Map -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">معلومات الاتصال</h2>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                <span>شارع الأمير محمد بن عبدالعزيز، الرياض، المملكة العربية السعودية</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                                <span>+966 12 345 6789</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                <span>info@advisor.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">موقعنا على الخريطة</h2>
+                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.090526705983!2d46.67529601480936!3d24.71355198417301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f038d76c71b9b%3A0x5a2a35f0c8293b0!2sKingdom%20Centre%20Tower!5e0!3m2!1sen!2ssa!4v1678886400000!5m2!1sen!2ssa" 
+                                width="100%" 
+                                height="350" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="موقع شركة Advisor على الخريطة">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <img src="https://r2.flowith.net/files/5f6b3b59-44f5-4972-93ff-8873ea07dadb/1747954604288-2@1500x1500.png" alt="Advisor Logo Footer" class="h-12 mb-4">
+                    <p class="text-gray-400 text-sm">شركة Advisor هي دليلك الموثوق لاختيار مستقبلك الأكاديمي.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">خدماتنا</a></li>
+                        <li><a href="book-session.html" class="text-gray-400 hover:text-white transition-colors">حجز جلسة</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">عنّا</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">المدونة</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">تواصل معنا</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            <span>+966 12 345 6789</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            <span>info@advisor.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-4">تابعنا</h3>
+                     <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748 1.15.137-.353.3-.882-.344 1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+                &copy; 2023 Advisor. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Floating Button (same as index.html) -->
+    <div id="live-chat-button" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] h-16 w-16 md:h-16 md:w-16 rounded-full bg-gradient-to-tr from-primary to-secondary shadow-xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-9 md:w-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-.55.55a1 1 0 01-1.415 0L9 16
+<think>
+The user wants me to continue the response.
+The previous response ended with the HTML for the live chat button and window for `contact.html`.
+I need to continue with the rest of the files that were identified as needing modification or creation.
+These files are:
+- `blog.html`
+- `css/custom.min.css`
+- `js/navigation.min.js`
+- `js/book-session.min.js`
+- `js/blog.min.js`
+
+I will generate the full code for each of these files, ensuring they incorporate the requested changes:
+- `blog.html`: Header, Live Chat Icon, Article loading indicator, Newsletter<think>
+The user wants me to continue the previous response.
+The last part of the previous response was the HTML for `contact.html`.
+I need to provide the remaining modified/created files:
+- `blog.html`
+- `css/custom.min.css`
+- `js/navigation.min.js`
+- `js/book-session.min.js`
+- `js/blog.min.js`
+
+I will generate the content for these files, ensuring to follow all constraints and style guides.
+The `blog.html` will need a newsletter section as per review point 5 (secondary CTAs) and loading indicator logic for articles.
+`css/custom.min.css` will have mobile menu transition styles and service selection styles for `book-session.html`.
+`js/navigation.min.js` will have updated logic for mobile menu toggling (icons and transitions).
+`js/book-session.min.js` will handle the booking flow, service pre-selection from URL, progress bar, and selection indicators.
+`js/blog.min.js` will handle fetching markdown articles and showing a loading indicator.
+
+I need to make sure that the first character of my output seamlessly connects with the previous content. Since the previous output ended with a complete HTML file, I can start a new file directly.
+The user also reminded to add `` at the end.z" />
+        </svg>
+    </div>
+    <!-- Live Chat Window (same as index.html) -->
+    <div id="live-chat-window" class="fixed bottom-24 right-6 md:bottom-28 md:right-8 z-[99] w-80 md:w-96 max-w-[calc(100vw-3rem)] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col hidden transition-all duration-300 ease-out transform translate-y-10 opacity-0">
+        <div class="bg-gradient-to-r from-primary to-secondary text-white p-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="https://r2.flowith.net/files/5f6b3b59-44f5-4972-93ff-8873ea07dadb/1747954604288-2@1500x1500.png" alt="Advisor Logo in Chat" class="h-8 w-8 rounded-full border-2 border-white/80 p-0.5 object-contain">
+                <h3 class="font-bold text-md">محادثة Advisor</h3>
+            </div>
+            <button id="close-chat-button" class="text-white hover:opacity-75 transition-opacity" aria-label="إغلاق نافذة الدردشة">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-grow p-4 overflow-y-auto text-gray-800 space-y-3 bg-gray-50" style="max-height: 320px;">
+             <div class="flex items-start gap-2.5">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-primary flex items-center justify-center text-white font-semibold text-sm shadow">
+                    <img src="https://r2.flowith.net/files/5f6b3b59-44f5-4972-93ff-8873ea07dadb/1747954604288-2@1500x1500.png" alt="Advisor Bot Icon" class="h-5 w-5 object-contain filter brightness-0 invert-[1]">
+                </div>
+                <div class="flex flex-col gap-1 w-full max-w-[calc(100%-3.5rem)]">
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <span class="text-xs font-semibold text-gray-700">بوت Advisor</span>
+                    </div>
+                    <div class="leading-tight p-2.5 rounded-lg rounded-es-none bg-white shadow-sm border border-gray-200 text-gray-800">
+                        <p class="text-sm">مرحباً بك في Advisor! أنا بوت الدردشة الافتراضي لمساعدتك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3 bg-gray-100 border-t border-gray-200">
+            <form class="flex items-center gap-2">
+                <input type="text" id="chat-input" class="flex-grow p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary text-sm" placeholder="اكتب رسالتك هنا..." dir="rtl">
+                <button type="submit" id="chat-send-button" class="bg-primary text-white p-2.5 rounded-lg hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary" aria-label="إرسال رسالة الدردشة">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform -rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async=""></script>
+    <script>
+        // Basic form submission feedback for contact form
+        const contactForm = document.getElementById('contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+        if(contactForm && formFeedback) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Basic validation example
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                if(name && email && message) {
+                    formFeedback.innerHTML = '<p class="text-green-600 bg-green-100 p-3 rounded-md">شكراً لك! تم استلام رسالتك وسنتواصل معك قريباً.</p>';
+                    contactForm.reset();
+                } else {
+                    formFeedback.innerHTML = '<p class="text-red-600 bg-red-100 p-3 rounded-md">يرجى ملء جميع الحقول المطلوبة.</p>';
+                }
+                setTimeout(() => { formFeedback.innerHTML = ''; }, 5000);
+            });
+        }
+    </script>
+</body>
+</html>
